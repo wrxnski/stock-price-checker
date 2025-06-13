@@ -36,7 +36,7 @@ def get_stock_price(ticker_symbol, period):
         if period == "now":
             space()
             print(f"{BOLD}{stock_name}{RESET} ({ticker_symbol}) {BOLD}Latest Price{RESET}")
-            print("-----------------------------------------------------")
+            print("-" * 30)
             print(f"Real Time Price: ${price_latest:,.2f}")
             return
         
@@ -61,7 +61,7 @@ def get_stock_price(ticker_symbol, period):
 
         if period == "1d":
             print(f"{BOLD}{stock_name}{RESET} ({ticker_symbol}) Price Summary over: {BOLD}{period}{RESET}")
-            print("------------------------------------------------------")
+            print("-" * 30)
             print(f"{date_start.strftime('%d %b %Y')} Open: ${price_open:,.2f}")
             print(f"{date_end.strftime('%d %b %Y')} Close: ${price_close:,.2f}")
             price_change = price_close - price_open
@@ -69,7 +69,7 @@ def get_stock_price(ticker_symbol, period):
 
         else:
             print(f"{BOLD}{stock_name}{RESET} ({ticker_symbol}) Price Summary over: {BOLD}{period}{RESET}")
-            print("------------------------------------------------------")
+            print("-" * 30)
             print(f"{date_start.strftime('%d %b %Y')}: ${price_start:,.2f}")
             print(f"{date_end.strftime('%d %b %Y')}: ${price_end:,.2f}")
             price_change = price_end - price_start
@@ -103,7 +103,7 @@ def error_message_print(ticker_symbol, period):
     """Prints out a message saying there is no data for teh entered ticker"""
     print(f"No data found for {ticker_symbol} in the period {period}")
     time.sleep(DELAY_SEC_2)
-    print("------------------------------------------------------")
+    print("-" * 30)
     print("This could mean:")
     print("- The ticker is incorrect or inactive")
     print("- The stock is delisted")
@@ -132,7 +132,7 @@ def main():
             clear_and_print_header()
 
             get_stock_price(enter_ticker, enter_period)
-            print("------------------------------------------------------")
+            print("-" * 30)
             time.sleep(DELAY_SEC_2)
             choice_next = input(f"{BOLD}[P]{RESET} Change Period {BOLD}[S]{RESET} New Stock {BOLD}[X]{RESET} Exit App: ").upper().strip()
 
