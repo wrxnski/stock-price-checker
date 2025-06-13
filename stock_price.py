@@ -16,9 +16,9 @@ RESET = "\033[0m"
 DELAY_SEC_2 = 1
 
 def clear_and_print_header():
-    """Clears terminal and prints the header Check Stock Prices📊"""
+    """Clears terminal and prints the header Check Stock Prices🔎📈📉"""
     os.system('cls' if os.name == 'nt' else 'clear')
-    print("Check Stock Prices📊\n")
+    print("Check Stock Prices🔎📈📉\n")
 
 def space():
     """Prints a blank line adding readability"""
@@ -96,7 +96,7 @@ def valid_periods():
 def clear_and_print_header_enter_ticker(ticker):
     """Clears terminal but keeps Enter Ticker: """
     os.system('cls' if os.name == 'nt' else 'clear')
-    print("Check Stock Prices📊\n")
+    print("Check Stock Prices🔎📈📉\n")
     print(f"Enter Ticker: {ticker}\n")
 
 def error_message_print(ticker_symbol, period):
